@@ -1,0 +1,524 @@
+/* ===================================================
+   1. GLOBAL RESET
+=================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #111111;
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===================================================
+   2. HEADER & SUB-MENU
+=================================================== */
+.header-full {
+    width: 100%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 92%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.main-nav ul li a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111;
+    transition: color 0.2s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #dd20e0;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.search-box i {
+    color: #777;
+    margin-right: 8px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 13px;
+    width: 180px;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.user-actions a {
+    font-size: 18px;
+    color: #222;
+}
+
+/* Sub-Menu */
+.sub-nav-wrapper {
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #ffffff;
+}
+
+.sub-nav-container {
+    width: 92%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.sub-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.sub-nav-links li a {
+    font-size: 14px;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sub-nav-links li a:hover {
+    color: #dd20e0;
+}
+
+.sub-nav-links li a.sale-tag {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* ===================================================
+   3. BANNERS & BRANDING
+=================================================== */
+.banner-full img {
+    width: 100%;
+    height: auto;
+}
+
+.branding-strip {
+    background-color: #ffffff;
+    padding: 25px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.branding-container {
+    width: 92%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.branding-container img {
+    width: 11%;
+    min-width: 90px;
+    object-fit: contain;
+}
+
+/* Banner 2 With Overlay */
+.banner-overlay-section {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.banner-overlay-section .img img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.text-banner2 {
+    position: absolute;
+    bottom: 40px;
+    left: 60px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.text-banner2 h2 {
+    font-size: 32px;
+}
+
+.text-banner2 p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* ===================================================
+   4. COMMON SECTION LAYOUTS & HEADERS
+=================================================== */
+.section-wrapper {
+    width: 92%;
+    max-width: 1440px;
+    margin: 35px auto;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-subtext {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+/* ===================================================
+   5. CSS GRIDS (4 Cols, 5 Cols, 3 Cols)
+=================================================== */
+
+/* ៤ ជួរស្មើគ្នា (Category, P'chum Ben, Recommendations) */
+.grid-4-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* ៥ ជួរស្មើគ្នា (New Brand Just In, More to Discover) */
+.grid-5-cols {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+/* ៣ ជួរស្មើគ្នា (ខាងស្តាំ Promo Poster) */
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* Category & Discover Picture Cards */
+.category-card {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 380px;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.03);
+}
+
+/* ===================================================
+   6. PRODUCT CARD STYLING
+=================================================== */
+.product-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f7f7f7;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.04);
+}
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+.product-info {
+    padding: 10px 0;
+}
+
+.product-info .brand {
+    font-size: 11px;
+    font-weight: 700;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.product-info .title {
+    font-size: 13px;
+    color: #333;
+    margin: 4px 0;
+}
+
+.product-info .price {
+    font-size: 14px;
+    color: #111;
+}
+
+.product-info .price b {
+    font-size: 15px;
+}
+
+.product-info .price del {
+    color: #888;
+    font-size: 13px;
+    margin-left: 6px;
+}
+
+/* ===================================================
+   7. SPLIT PROMO LAYOUT (Poster ឆ្វេង + 3 Products ស្តាំ)
+=================================================== */
+.promo-split-layout {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.promo-poster {
+    flex: 0 0 32%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.promo-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promo-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title-inline {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.promo-content .product-img {
+    height: 310px; /* កម្ពស់កាតទំនិញ ៣ ស្តាំសមនឹង Poster ឆ្វេង */
+}
+
+/* ===================================================
+   8. VALUE PROPOSITIONS (SHIPPING & PAYMENT)
+=================================================== */
+.delivery-strip {
+    background-color: #fafafa;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.delivery-container {
+    width: 92%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.delivery-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.delivery-item img {
+    width: 40px;
+    height: auto;
+}
+
+.delivery-item h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ===================================================
+   9. FOOTER SECTION
+=================================================== */
+.footer-full {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 50px 0 30px;
+    margin-top: 30px;
+}
+
+.footer-container {
+    width: 92%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr 1fr 1.2fr;
+    gap: 25px;
+}
+
+.footer-col h4 {
+    font-size: 15px;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.footer-col p {
+    color: #aaaaaa;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-col p a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links li a {
+    color: #aaaaaa;
+    font-size: 13px;
+    transition: color 0.2s ease;
+}
+
+.footer-links li a:hover {
+    color: #ffffff;
+}
+
+.badge-app,
+.badge-payment {
+    margin-top: 12px;
+    width: 150px;
+}
+
+/* ===================================================
+   10. RESPONSIVE FOR TABLET & MOBILE
+=================================================== */
+@media (max-width: 1024px) {
+    .grid-4-cols,
+    .grid-5-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .promo-split-layout {
+        flex-direction: column;
+    }
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav,
+    .sub-nav-wrapper {
+        display: none;
+    }
+    .grid-4-cols,
+    .grid-5-cols,
+    .grid-3-cols {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .product-img,
+    .category-card {
+        height: 250px;
+    }
+    .delivery-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
